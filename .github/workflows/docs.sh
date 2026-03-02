@@ -44,7 +44,8 @@ mvn -T 2C -B clean install -DskipTests -Pflink1,spark3
 # build java/scala docs
 mkdir -p docs/target/api
 mvn javadoc:aggregate -B -pl "!paimon-e2e-tests" -Ppaimon-website-javadoc \
-    -DadditionalJOption="-Xdoclint:none --allow-script-in-comments" \
+    -DadditionalJOption=-Xdoclint:none \
+    -DadditionalOption=--allow-script-in-comments \
     -Dmaven.javadoc.failOnError=false \
     -Dcheckstyle.skip=true \
     -Dspotless.check.skip=true \
